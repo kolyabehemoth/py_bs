@@ -1,0 +1,10 @@
+bin/
+target/
+logs/
+.idea/
+*/*.iml
+*.iml
+/*.idea
+/*.iml
+/.settings
+/target

@@ -7,6 +7,9 @@ class base_entity:
     def execute(self):
         return ""
 
+    def execute_with_logs(self, log_file):
+        return self.execute() + " > " + log_file
+
 @unique
 class AmazonEc2Instance(Enum):
     Development3='development3'

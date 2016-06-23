@@ -4,11 +4,6 @@ from tools.entities.base_entity import AmazonEc2Instance
 from datetime import date, datetime
 import sys, getopt
 
-
-
-# print scp_connection_data.execute()
-#ssh_executor.execute();
-
 def main(argv):
    str_date = ''
    str_instance = ''
@@ -29,6 +24,7 @@ def main(argv):
    instance = AmazonEc2Instance.parse(str_instance)
    scp_connection_data = properties_conf.get_scp_connection_data(instance, tdate)
    print scp_connection_data.execute()
+   ssh_executor.execute_download(scp_connection_data);
 
 
 if __name__ == "__main__":

@@ -1,5 +1,6 @@
 from enum import Enum, unique
 
+
 class base_entity:
     def __init__(self):
         pass
@@ -7,8 +8,6 @@ class base_entity:
     def execute(self):
         return ""
 
-    def execute_with_logs(self, log_file):
-        return self.execute() + " > " + log_file
 
 @unique
 class AmazonEc2Instance(Enum):
@@ -22,7 +21,6 @@ class AmazonEc2Instance(Enum):
     Qalab4='qalab4'
     Qalab5='qalab5'
     Prod='production2'
-
 
     def take(self):
         return 'amazon.ec2.instance.' + self.value + '.syslog'

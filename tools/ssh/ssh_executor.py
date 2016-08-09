@@ -1,8 +1,11 @@
 import subprocess
+import logging
 
 
-def execute_download(d):
-    request = d.execute_with_logs(d.log)
-    print "request: " + request
+def execute_download(scp_data):
+    request = scp_data.execute()
+    logging.info("the request for downloading log from ec2: " + request)
     s = subprocess.Popen(request, shell=True, stdout=subprocess.PIPE).stdout.read().strip()
-    print s.strip()
+    logging.info("end download log")
+    logging.info(s.strip())
+
